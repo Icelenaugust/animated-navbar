@@ -1,0 +1,135 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 30px 20px 0;
+    width: 120px;
+    height: 500px;
+    //background-color: bisque;
+}
+
+.list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    filter: url(#liquid);
+
+    button {
+        background-color: #000;
+        z-index: 100;
+        outline: none;
+        border: 0;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        border-radius: 50%;
+        color: white;
+        font-size: 30px;
+        filter: url(#liquid);
+
+        &.shake { animation: animateIn 0.5s forwards; }
+        &.reset { animation: animateOut 0.5s forwards; }
+        
+
+        span {
+            display: inline-block;
+        
+            &.rotate { animation: rotateIn 0.5s forwards; }
+            &.reset { animation: rotateOut 0.5s forwards; }
+
+        }
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        z-index: 10;
+        transform: translateY(-80px);
+       
+        
+        .stack {
+            display: flex;
+            //justify-content: center;
+            flex-direction: row;
+            position: absolute;
+            align-items: center;
+            margin-left: 124px;
+
+            .nav-item {
+                display: flex;
+                justify-content: center;
+                //position: absolute;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+            }
+            span {
+                opacity: 0;
+                background-color: transparent;
+                display: inline-block;
+                align-items: center;
+                padding-left: 10px;
+                margin-left: 15px;
+                display: flex;
+                width: 100px;
+                height: 30px;
+                font-size: 17px;
+            }
+        }
+        
+    }   
+}
+
+
+@keyframes rotateIn {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateOut {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes animateIn {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes animateOut {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

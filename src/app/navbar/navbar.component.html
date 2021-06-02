@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="list">
+        <button 
+            [ngClass]="{ shake: collapsed, reset: init && !collapsed }"
+            (click)="toggle(menu)"
+        >
+            <span [ngClass]="{ rotate: collapsed, reset: init && !collapsed }">+</span>
+        </button>
+        
+        <div class="menu" #menu>
+            <div class="stack">
+                <button class="nav-item" 
+                        style="background-color: #ffcf7d;"
+                        (mouseenter) ="mouseEnter(yellow)"  
+                        (mouseleave) ="mouseLeave(yellow)"
+                        (click)="btnClick('/yellow');"
+                ></button>
+                <span style="color: #ffcf7d" #yellow>Yellow</span>
+            </div>
+            <div class="stack">
+                <button class="nav-item" 
+                        style="background-color: #ffa67f;"
+                        (mouseenter) ="mouseEnter(orange)"  
+                        (mouseleave) ="mouseLeave(orange)"
+                        (click)="btnClick('/orange');"
+                ></button>
+                <span style="color: #ffa67f" #orange>Orange</span>
+            </div>
+            <div class="stack">
+                <button class="nav-item" 
+                        style="background-color: #c09cfe;"
+                        (mouseenter) ="mouseEnter(purple)"  
+                        (mouseleave) ="mouseLeave(purple)"
+                        (click)="btnClick('/purple');"
+                ></button>
+                <span style="color: #c09cfe;" #purple>Purple</span>
+            </div>
+            <div class="stack">
+                <button class="nav-item" 
+                        style="background-color: #04d9ff;"
+                        (mouseenter) ="mouseEnter(blue)"  
+                        (mouseleave) ="mouseLeave(blue)"
+                        (click)="btnClick('/blue');"
+                ></button>
+                <span style="color: #04d9ff;" #blue>Blue</span>
+            </div>
+            <div class="stack">
+                <button class="nav-item" 
+                        style="background-color: #e8f19b;"
+                        (mouseenter) ="mouseEnter(green)"  
+                        (mouseleave) ="mouseLeave(green)"
+                        (click)="btnClick('/green');"
+                ></button>
+                <span style="color: #e8f19b" #green>Green</span>
+            </div>  
+            <div class="stack">
+                <button class="nav-item" 
+                        style="background-color: black"
+                        (mouseenter) ="mouseEnter(black)"  
+                        (mouseleave) ="mouseLeave(black)"
+                        (click)="btnClick('/home');"
+                ></button>
+                <span style="color: black" #black>Home</span>
+            </div>  
+        </div>
+    </div>
+    <svg>
+      <filter id="liquid">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+        />
+        <feBlend in="SourceGraphic" in2="liquid" />
+      </filter>
+    </svg>
+  </div>
